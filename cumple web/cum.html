@@ -1,0 +1,194 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz cumpleaños rabanito 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background:#fff0f5;
+  text-align:center;
+  overflow:hidden;
+}
+
+.pagina{
+  display:none;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  padding:30px;
+}
+
+.activa{display:flex}
+
+button{
+  padding:15px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d88;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+.card{
+  background:white;
+  padding:40px;
+  border-radius:25px;
+  max-width:700px;
+  box-shadow:0 0 25px rgba(0,0,0,0.1);
+  line-height:1.7;
+}
+
+.f1{
+  font-size:28px;
+  font-weight:bold;
+  margin-bottom:30px;
+}
+
+.auto{
+  position:fixed;
+  bottom:40px;
+  left:-200px;
+  font-size:40px;
+  animation:manejar 6s linear infinite;
+}
+@keyframes manejar{from{left:-200px} to{left:110%}}
+
+.corazon{
+  position:fixed;
+  top:-10px;
+  font-size:20px;
+  animation:caer 6s linear infinite;
+}
+@keyframes caer{
+  to{transform:translateY(110vh);opacity:0}
+}
+
+.carrusel{
+  width:260px;
+  height:260px;
+  border-radius:20px;
+  object-fit:cover;
+  box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+iframe{
+  width:300px;
+  height:80px;
+  border-radius:12px;
+  border:none;
+  margin:10px;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="musica" loop>
+  <source src="music/fondo.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playMusic()" style="position:fixed;top:20px;right:20px">
+🎵 Activar música
+</button>
+
+<!-- PAGINA 1 -->
+<section class="pagina activa">
+<h1> Feliz cumpleaños mi amor 💖</h1>
+<button onclick="next()">Abrir sorpresa</button>
+</section>
+
+<!-- PAGINA 2 -->
+<section class="pagina">
+<div class="f1">🏎️ Lights out and away we go… hacia más momentos a tu lado 💖</div>
+<button onclick="next()">Siguiente ➜</button>
+</section>
+
+<!-- PAGINA 3 FOTOS -->
+<section class="pagina">
+<h2>Nuestros recuerdos </h2>
+<img id="foto" class="carrusel" src="img/foto1.jpg">
+<button onclick="next()">Siguiente ➜</button>
+</section>
+
+<!-- PAGINA 4 CARTA -->
+<section class="pagina">
+<div class="card">
+Feliz cumpleaños, mi amor 💖<br><br>
+
+Hoy celebro la suerte de que existas y de que estés en mi vida. Amo tenerte, amo cómo me haces sentir incluso estando lejos, y me encanta saber que compartimos este amor tan bonito.<br><br>
+
+Ojalá pudiera abrazarte hoy, pero mientras llega ese momento, quiero que sepas que estás presente en cada uno de mis pensamientos. Gracias por tu paciencia, tu cariño y por elegirme siempre.<br><br>
+
+Te deseo un año lleno de sueños cumplidos, sonrisas y muchos momentos felices… y ojalá pronto podamos celebrar juntos en persona.<br><br>
+
+Te quiero muchísimo, feliz cumpleaños mi niño 💕
+</div>
+<button onclick="next()">Siguiente ➜</button>
+</section>
+
+<!-- PAGINA 5 SPOTIFY -->
+<section class="pagina">
+<h2>Son algunas que me recuerdan a ti 💗</h2>
+
+<p>
+Cada vez que escucho una guitarra  pienso en ti,  
+cuando hablan de la F1 o de Max Verstappen sonrío porque me recuerdan a ti 💖
+</p>
+
+<iframe src="https://open.spotify.com/embed/track/6TBJkXHPhu3EsMk1bshwuI"></iframe>
+<iframe src="https://open.spotify.com/embed/track/2IFND3phjzIG1RcPnHh2hP"></iframe>
+<iframe src="https://open.spotify.com/embed/track/5oXFMQdUpNz7gSAnqR7nCs"></iframe>
+<iframe src="https://open.spotify.com/embed/track/0d1XmEyaXVWDNyh6yC4oIf"></iframe>
+
+<h2>Te amo 💖</h2>
+</section>
+
+<script>
+function playMusic(){
+ document.getElementById("musica").play();
+}
+
+let paginas=document.querySelectorAll(".pagina");
+let i=0;
+function next(){
+ paginas[i].classList.remove("activa");
+ i++;
+ paginas[i].classList.add("activa");
+}
+
+// corazones
+setInterval(()=>{
+ let c=document.createElement("div");
+ c.className="corazon";
+ c.innerHTML="💖";
+ c.style.left=Math.random()*100+"vw";
+ document.body.appendChild(c);
+ setTimeout(()=>c.remove(),6000);
+},300);
+
+// auto F1
+let auto=document.createElement("div");
+auto.className="auto";
+auto.innerHTML="🏎️";
+document.body.appendChild(auto);
+
+// carrusel fotos
+let fotos=["img/foto1.png","img/foto2.png","img/foto3.png","img/foto4.png"];
+let index=0;
+setInterval(()=>{
+ let img=document.getElementById("foto");
+ if(img){
+   index=(index+1)%fotos.length;
+   img.src=fotos[index];
+ }
+},2500);
+</script>
+
+</body>
+</html>
