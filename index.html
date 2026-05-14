@@ -101,7 +101,9 @@ iframe{
 
 <!-- PAGINA 2 -->
 <section class="pagina">
-<div class="f1">🏎️ Lights out and away we go… hacia más momentos a tu lado 💖</div>
+<div class="f1">
+ 🏎️ Lights out and away we go… hacia más momentos a tu lado 💖
+</div>
 <button onclick="next()">Siguiente ➜</button>
 </section>
 
@@ -115,22 +117,28 @@ iframe{
 <!-- PAGINA 4 CARTA -->
 <section class="pagina">
 <div class="card">
-Feliz cumpleaños, mi amor 💖<br><br>
+Feliz cumpleaños, mi amor 💖
+ <br><br>
 
-Hoy celebro la suerte de que existas y de que estés en mi vida. Amo tenerte, amo cómo me haces sentir incluso estando lejos, y me encanta saber que compartimos este amor tan bonito.<br><br>
+Hoy celebro la suerte de que existas y de que estés en mi vida. Amo tenerte, amo cómo me haces sentir incluso estando lejos, y me encanta saber que compartimos este amor tan bonito.
+ <br><br>
 
-Ojalá pudiera abrazarte hoy, pero mientras llega ese momento, quiero que sepas que estás presente en cada uno de mis pensamientos. Gracias por tu paciencia, tu cariño y por elegirme siempre.<br><br>
+Ojalá pudiera abrazarte hoy, pero mientras llega ese momento, quiero que sepas que estás presente en cada uno de mis pensamientos. Gracias por tu paciencia, tu cariño y por elegirme siempre.
+ <br><br>
 
-Te deseo un año lleno de sueños cumplidos, sonrisas y muchos momentos felices… y ojalá pronto podamos celebrar juntos en persona.<br><br>
+Te deseo un año lleno de sueños cumplidos, sonrisas y muchos momentos felices… y ojalá pronto podamos celebrar juntos en persona.
+ <br><br>
 
 Te quiero muchísimo, feliz cumpleaños mi niño 💕
+ 
 </div>
+ 
 <button onclick="next()">Siguiente ➜</button>
 </section>
 
 <!-- PAGINA 5 SPOTIFY -->
 <section class="pagina">
-<h2>Son algunas que me recuerdan a ti 💗</h2>
+<h2>Son algunas canciones que me recuerdan a ti 💗</h2>
 
 <p>
 Cada vez que escucho una guitarra  pienso en ti,  
@@ -149,38 +157,65 @@ cuando hablan de la F1 o de Max Verstappen sonrío porque me recuerdan a ti 💖
 
 let paginas=document.querySelectorAll(".pagina");
 let i=0;
+ 
 function next(){
+ 
  paginas[i].classList.remove("activa");
+ 
  i++;
+ 
  paginas[i].classList.add("activa");
 }
 
 // corazones
 setInterval(()=>{
+ 
  let c=document.createElement("div");
+ 
  c.className="corazon";
+ 
  c.innerHTML="💖";
+ 
  c.style.left=Math.random()*100+"vw";
+ 
  document.body.appendChild(c);
+ 
  setTimeout(()=>c.remove(),6000);
+ 
 },300);
 
 // auto F1
 let auto=document.createElement("div");
+ 
 auto.className="auto";
+ 
 auto.innerHTML="🏎️";
+ 
 document.body.appendChild(auto);
 
 // carrusel fotos
-let fotos=["img/foto1.png","img/foto2.png","img/foto3.png","img/foto4.png"];
+let fotos=[
+ "img/foto1.png",
+ "img/foto2.png",
+ "img/foto3.png"
+ ,"img/foto4.png"
+];
 let index=0;
+ 
 setInterval(()=>{
+ 
  let img=document.getElementById("foto");
+ 
  if(img){
+  
    index=(index+1)%fotos.length;
+  
    img.src=fotos[index];
+  
  }
+ 
 },2500);
+ 
 </script>
 
 </body>
