@@ -89,14 +89,9 @@ iframe{
 
 <body>
 
-<audio controls loop autoplay>
+<audio id="musica" controls autoplay loop>
   <source src="music/fondo.mp3" type="audio/mpeg">
 </audio>
-
-<button onclick="playMusic()" 
-style="position:fixed;top:20px;right:20px;z-index:1000">
-🎵 Activar música
-</button>
 
 <!-- PAGINA 1 -->
 <section class="pagina activa">
@@ -151,13 +146,7 @@ cuando hablan de la F1 o de Max Verstappen sonrío porque me recuerdan a ti 💖
 </section>
 
 <script>
-function playMusic(){
- 
- const musica = document.getElementById("musica");
 
- musica.play();
-
-}
 let paginas=document.querySelectorAll(".pagina");
 let i=0;
 function next(){
