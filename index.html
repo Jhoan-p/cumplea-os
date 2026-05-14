@@ -1,13 +1,14 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Feliz cumpleaños rabanito 💖</title>
 
 <style>
+
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family:'Segoe UI',sans-serif;
   background:#fff0f5;
   text-align:center;
   overflow:hidden;
@@ -22,7 +23,9 @@ body{
   padding:30px;
 }
 
-.activa{display:flex}
+.activa{
+  display:flex;
+}
 
 button{
   padding:15px 25px;
@@ -57,7 +60,11 @@ button{
   font-size:40px;
   animation:manejar 6s linear infinite;
 }
-@keyframes manejar{from{left:-200px} to{left:110%}}
+
+@keyframes manejar{
+  from{left:-200px}
+  to{left:110%}
+}
 
 .corazon{
   position:fixed;
@@ -65,8 +72,12 @@ button{
   font-size:20px;
   animation:caer 6s linear infinite;
 }
+
 @keyframes caer{
-  to{transform:translateY(110vh);opacity:0}
+  to{
+    transform:translateY(110vh);
+    opacity:0;
+  }
 }
 
 .carrusel{
@@ -84,139 +95,186 @@ iframe{
   border:none;
   margin:10px;
 }
+
+audio{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:1000;
+}
+
 </style>
 </head>
 
 <body>
 
-<audio controls autoplay loop>
+<!-- MUSICA -->
+<audio controls loop autoplay>
   <source src="music/fondo.mp3" type="audio/mpeg">
 </audio>
 
- <!-- PAGINA 1 -->
+<!-- PAGINA 1 -->
 <section class="pagina activa">
-<h1> Feliz cumpleaños mi amor 💖</h1>
-<button onclick="next()">Abrir sorpresa</button>
+
+  <h1>Feliz cumpleaños mi amor 💖</h1>
+
+  <button onclick="next()">Abrir sorpresa</button>
+
 </section>
 
 <!-- PAGINA 2 -->
 <section class="pagina">
-<div class="f1">
- 🏎️ Lights out and away we go… hacia más momentos a tu lado 💖
-</div>
-<button onclick="next()">Siguiente ➜</button>
+
+  <div class="f1">
+    🏎️ Lights out and away we go… hacia más momentos a tu lado 💖
+  </div>
+
+  <button onclick="next()">Siguiente ➜</button>
+
 </section>
 
-<!-- PAGINA 3 FOTOS -->
+<!-- PAGINA 3 -->
 <section class="pagina">
-<h2>Nuestros recuerdos </h2>
-<img id="foto" class="carrusel" src="img/foto1.png">
-<button onclick="next()">Siguiente ➜</button>
+
+  <h2>Nuestros recuerdos 💕</h2>
+
+  <!-- CAMBIA jpg SI TUS FOTOS SON jpg -->
+  <img id="foto" class="carrusel" src="img/foto1.jpg">
+
+  <button onclick="next()">Siguiente ➜</button>
+
 </section>
 
-<!-- PAGINA 4 CARTA -->
+<!-- PAGINA 4 -->
 <section class="pagina">
-<div class="card">
-Feliz cumpleaños, mi amor 💖
- <br><br>
 
-Hoy celebro la suerte de que existas y de que estés en mi vida. Amo tenerte, amo cómo me haces sentir incluso estando lejos, y me encanta saber que compartimos este amor tan bonito.
- <br><br>
+  <div class="card">
 
-Ojalá pudiera abrazarte hoy, pero mientras llega ese momento, quiero que sepas que estás presente en cada uno de mis pensamientos. Gracias por tu paciencia, tu cariño y por elegirme siempre.
- <br><br>
+    Feliz cumpleaños, mi amor 💖
+    <br><br>
 
-Te deseo un año lleno de sueños cumplidos, sonrisas y muchos momentos felices… y ojalá pronto podamos celebrar juntos en persona.
- <br><br>
+    Hoy celebro la suerte de que existas y de que estés en mi vida.
+    Amo tenerte, amo cómo me haces sentir incluso estando lejos,
+    y me encanta saber que compartimos este amor tan bonito.
 
-Te quiero muchísimo, feliz cumpleaños mi niño 💕
- 
-</div>
- 
-<button onclick="next()">Siguiente ➜</button>
+    <br><br>
+
+    Ojalá pudiera abrazarte hoy, pero mientras llega ese momento,
+    quiero que sepas que estás presente en cada uno de mis pensamientos.
+
+    <br><br>
+
+    Gracias por tu paciencia, tu cariño y por elegirme siempre.
+
+    <br><br>
+
+    Te deseo un año lleno de sueños cumplidos,
+    sonrisas y muchos momentos felices 💕
+
+    <br><br>
+
+    Te quiero muchísimo, feliz cumpleaños mi niño 💖
+
+  </div>
+
+  <button onclick="next()">Siguiente ➜</button>
+
 </section>
 
-<!-- PAGINA 5 SPOTIFY -->
+<!-- PAGINA 5 -->
 <section class="pagina">
-<h2>Son algunas canciones que me recuerdan a ti 💗</h2>
 
-<p>
-Cada vez que escucho una guitarra  pienso en ti,  
-cuando hablan de la F1 o de Max Verstappen sonrío porque me recuerdan a ti 💖
-</p>
+  <h2>Son algunas canciones que me recuerdan a ti 💗</h2>
 
-<iframe src="https://open.spotify.com/embed/track/6TBJkXHPhu3EsMk1bshwuI"></iframe>
-<iframe src="https://open.spotify.com/embed/track/2IFND3phjzIG1RcPnHh2hP"></iframe>
-<iframe src="https://open.spotify.com/embed/track/5oXFMQdUpNz7gSAnqR7nCs"></iframe>
-<iframe src="https://open.spotify.com/embed/track/0d1XmEyaXVWDNyh6yC4oIf"></iframe>
+  <p>
+    Cada vez que escucho una guitarra pienso en ti,
+    cuando hablan de la F1 o de Max Verstappen
+    sonrío porque me recuerdan a ti 💖
+  </p>
 
-<h2>Te amo 💖</h2>
+  <iframe src="https://open.spotify.com/embed/track/6TBJkXHPhu3EsMk1bshwuI"></iframe>
+
+  <iframe src="https://open.spotify.com/embed/track/2IFND3phjzIG1RcPnHh2hP"></iframe>
+
+  <iframe src="https://open.spotify.com/embed/track/5oXFMQdUpNz7gSAnqR7nCs"></iframe>
+
+  <iframe src="https://open.spotify.com/embed/track/0d1XmEyaXVWDNyh6yC4oIf"></iframe>
+
+  <h2>Te amo 💖</h2>
+
 </section>
 
 <script>
 
-let paginas=document.querySelectorAll(".pagina");
-let i=0;
- 
+// PAGINAS
+let paginas = document.querySelectorAll(".pagina");
+
+let i = 0;
+
 function next(){
- 
- paginas[i].classList.remove("activa");
- 
- i++;
- 
- paginas[i].classList.add("activa");
+
+  paginas[i].classList.remove("activa");
+
+  i++;
+
+  paginas[i].classList.add("activa");
+
 }
 
-// corazones
+// CORAZONES
 setInterval(()=>{
- 
- let c=document.createElement("div");
- 
- c.className="corazon";
- 
- c.innerHTML="💖";
- 
- c.style.left=Math.random()*100+"vw";
- 
- document.body.appendChild(c);
- 
- setTimeout(()=>c.remove(),6000);
- 
+
+  let c = document.createElement("div");
+
+  c.className = "corazon";
+
+  c.innerHTML = "💖";
+
+  c.style.left = Math.random()*100 + "vw";
+
+  document.body.appendChild(c);
+
+  setTimeout(()=>c.remove(),6000);
+
 },300);
 
-// auto F1
-let auto=document.createElement("div");
- 
-auto.className="auto";
- 
-auto.innerHTML="🏎️";
- 
+// AUTO F1
+let auto = document.createElement("div");
+
+auto.className = "auto";
+
+auto.innerHTML = "🏎️";
+
 document.body.appendChild(auto);
 
-// carrusel fotos
-let fotos=[
- "img/foto1.png",
- "img/foto2.png",
- "img/foto3.png"
- ,"img/foto4.png"
+// FOTOS
+let fotos = [
+
+  "img/foto1.jpg",
+  "img/foto2.jpg",
+  "img/foto3.jpg",
+  "img/foto4.jpg"
+
 ];
-let index=0;
- 
+
+let index = 0;
+
 setInterval(()=>{
- 
- let img=document.getElementById("foto");
- 
- if(img){
-  
-   index=(index+1)%fotos.length;
-  
-   img.src=fotos[index];
-  
- }
- 
+
+  let img = document.getElementById("foto");
+
+  if(img){
+
+    index = (index + 1) % fotos.length;
+
+    img.src = fotos[index];
+
+  }
+
 },2500);
- 
+
 </script>
 
 </body>
 </html>
+
